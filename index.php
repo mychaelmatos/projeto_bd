@@ -53,7 +53,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="medico.php">Medico</a>
     </header>
 
-    <h2>Informações do Paciente</h2>
+    <h2>Informações da Pessoa</h2>
 
     <form action="index.php" method="POST">
         <label for="nome">Nome:</label><br>

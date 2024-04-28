@@ -3,14 +3,16 @@ body {
     padding: 0;
     background-color: #f2f2f2;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
 }
 
 .cartao {
+    display: flex;
+    flex-direction: row;
     width: 80%;
-    height: 100%;
     padding: 20px 40px;
     background-color: #fff;
     border-radius: 5px;
@@ -31,7 +33,3 @@ h1, h3 {
 span {
     font-weight: bold;
 }
-
-
-
-

@@ -47,8 +47,8 @@ $prescricoes = $prescricoes->fetchAll(PDO::FETCH_ASSOC);
     <link rel="stylesheet" href="styles\informacao.css">
 </head>
 <body>
-    <div class="cartao">
-        <h1>Informações Gerais da Consulta</h1>
+    <h1>Informações Gerais da Consulta</h1>
+    <div class="cartao">  
         <div class="div1">
             <h3>Informações da consulta</h3>
             <span>Data da consulta: </span>

@@ -56,42 +56,48 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <h2>Informações do Paciente</h2>
 
     <form action="index.php" method="POST">
-        <label for="nome">Nome:</label><br>
-        <input type="text" id="nome_id" name="nome" required><br><br>
+        <div class="paginapaciente">
+            <div class="paciente">
+                <label for="nome">Nome:</label><br>
+                <input type="text" id="nome_id" name="nome" required><br><br>
 
-        <label for="sobrenome">Sobrenome:</label><br>
-        <input type="text" id="sobrenome_id" name="sobrenome" required><br><br>
+                <label for="sobrenome">Sobrenome:</label><br>
+                <input type="text" id="sobrenome_id" name="sobrenome" required><br><br>
 
-        <label for="data_nascimento">Data de Nascimento:</label><br>
-        <input type="date" id="data_nascimento_id" name="data_nascimento" required><br><br>
+                <label for="data_nascimento">Data de Nascimento:</label><br>
+                <input type="date" id="data_nascimento_id" name="data_nascimento" required><br><br>
 
-        <label for="sexo">Sexo:</label><br>
-        <input type="radio" id="masculino_id" name="sexo" value="0" required>
-        <label for="masculino">Masculino</label>
-        <input type="radio" id="feminino_id" name="sexo" value="1">
-        <label for="feminino">Feminino</label><br><br>
+                <label for="sexo">Sexo:</label><br>
+                <input type="radio" id="masculino_id" name="sexo" value="0" required>
+                <label for="masculino">Masculino</label>
+                <input type="radio" id="feminino_id" name="sexo" value="1">
+                <label for="feminino">Feminino</label><br><br>
 
-        <label for="endereco">Endereço:</label><br>
-        <input type="text" id="endereco_id" name="endereco" required><br><br>
+                <label for="endereco">Endereço:</label><br>
+                <input type="text" id="endereco_id" name="endereco" required><br><br>
 
-        <label for="telefone">Telefone:</label><br>
-        <input type="tel" id="telefone_id" name="telefone" required><br><br>
+                <label for="telefone">Telefone:</label><br>
+                <input type="tel" id="telefone_id" name="telefone" required><br><br>
 
-        <label for="email">Email:</label><br>
-        <input type="text" id="email_id" name="email" required><br><br>
+                <label for="email">Email:</label><br>
+                <input type="text" id="email_id" name="email" required><br><br>
+            </div>
 
-        <label for="medico">Medicos disponiveis:</label><br>
-        <select name="medico" id="medico_id">
-            <option disabled selected value="">Selecione um médico</option>
-            <?php foreach ($medicos as $medico) { ?>
-                <option value="<?= $medico['numero_licenca']; ?>"><?= $medico['primeiro_nome'] . " " . $medico['sobrenome']?></option>
-            <?php } ?>
-        </select><br><br>
+            <div class="consulta">
+                <label for="medico">Medicos disponiveis:</label><br>
+                <select name="medico" id="medico_id">
+                    <option disabled selected value="">Selecione um médico</option>
+                    <?php foreach ($medicos as $medico) { ?>
+                        <option value="<?= $medico['numero_licenca']; ?>"><?= $medico['primeiro_nome'] . " " . $medico['sobrenome']?></option>
+                    <?php } ?>
+                </select><br><br>
 
-        <label for="motivo">Motivo da Consulta:</label><br>
-        <input type="text" id="motivo_id" name="motivo" required><br><br>
+                <label for="motivo">Motivo da Consulta:</label><br>
+                <input type="text" id="motivo_id" name="motivo" required><br><br>
 
-        <input type="submit" value="Enviar">
+                <input type="submit" value="Enviar">
+            </div>
+        </div>
     </form>
 
 </body>

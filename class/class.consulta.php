@@ -20,6 +20,23 @@ class consultas
         $query = "SELECT * FROM consultas_com_nomes;";
         return $this->executeQuery($query);
     }
+    public function deleteConsulta($id_consulta)
+    {
+        $query = "DELETE FROM consultas WHERE id_consulta = :id_consulta";
+        $params = [
+            ':id_consulta' => $id_consulta
+        ];
+        $this->executeQuery($query, $params);
+    }
+    public function updateConsulta($id_consulta, $id_medico)
+    {
+        $query = "UPDATE consultas SET id_profissional = :id_medico WHERE id_consulta = :id_consulta";
+        $params = [
+            ':id_medico' => $id_medico,
+            ':id_consulta' => $id_consulta
+        ];
+        return $this->executeQuery($query, $params);
+    }
     public function getConsultaId($id)
     {
         $query = "SELECT * FROM consultas WHERE id_consulta = :id";

@@ -1,7 +1,7 @@
 <?php
 
 include 'class/class.paciente.php';
-include 'class\class.medicos.php';
+include 'class/class.medicos.php';
 include 'class/class.consulta.php';
 
 $pacient = new paciente();
@@ -61,6 +61,8 @@ $consultY = $consulY->fetchAll(PDO::FETCH_ASSOC);
                             <td><?= date('d/m/Y H:i', strtotime($consulta['data_consulta'])) ?></td>
                             <td><?= $consulta['motivo'] ?></td>
                             <td><a class="botao_prescrever" href="prescricao.php?id=<?= $consulta['id_consulta']?>">Prescrever</a></td>
+                            <td><a class="botao_prescrever" href="deletar_consulta.php?id=<?= $consulta['id_consulta']?>">Deletar</a></td>
+                            <td><a class="botao_prescrever" href="editar_consulta.php?id=<?= $consulta['id_consulta']?>">Editar<br>Médico</a></td>
                         </tr>
                     <?php endforeach; ?>
                 </tbody>

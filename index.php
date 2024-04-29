@@ -68,9 +68,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <input type="date" id="data_nascimento_id" name="data_nascimento" required><br><br>
 
                 <label for="sexo">Sexo:</label><br>
-                <input type="radio" id="masculino_id" name="sexo" value="0" required>
+                <input type="radio" id="masculino_id" name="sexo" value="M" required>
                 <label for="masculino">Masculino</label>
-                <input type="radio" id="feminino_id" name="sexo" value="1">
+                <input type="radio" id="feminino_id" name="sexo" value="F">
                 <label for="feminino">Feminino</label><br><br>
 
                 <label for="endereco">Endereço:</label><br>
@@ -99,7 +99,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
         </div>
     </form>
-
 </body>
 
 </html>

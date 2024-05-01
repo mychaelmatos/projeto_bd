@@ -22,6 +22,34 @@ class tratamentos
         ];
         return $this->executeQuery($query, $params);
     }
+
+    public function deleteTratamento($id_tratamento)
+    {
+        $query = "DELETE FROM tratamentos WHERE id_tratamento = :id_tratamento";
+        $params = [
+            ':id_tratamento' => $id_tratamento
+        ];
+        return $this->executeQuery($query, $params);
+    }
+
+    public function updateFinalizarTratamento($id_tratamento)
+    {
+        $query = "UPDATE tratamentos SET status = 'Encerrado' WHERE id_tratamento = :id_tratamento";
+        $params = [
+            ':id_tratamento' => $id_tratamento
+        ];
+        return $this->executeQuery($query, $params);
+    }
+
+    public function getTratamentoIdTratamento($id_tratamento)
+    {
+        $query = "SELECT * FROM tratamentos WHERE id_tratamento = :id_tratamento";
+        $params = [
+            ':id_tratamento' => $id_tratamento
+        ];
+        return $this->executeQuery($query, $params);
+    }
+    
     public function insertTratamento($id_consulta, $descricao, $data_fim, $valor,)
     {
         $query = "INSERT INTO tratamentos (id_consulta, descricao, data_inicio, data_fim, valor_tratamento, status) VALUES (:id_consulta, :descricao, now(), :data_fim, :valor, :status)";

@@ -17,7 +17,7 @@ class consultas
 
     public function getConsulta()
     {
-        $query = "SELECT * FROM consultas_com_nomes;";
+        $query = "SELECT * FROM consultas_com_nomes ORDER BY id_consulta;";
         return $this->executeQuery($query);
     }
     public function deleteConsulta($id_consulta)
@@ -47,7 +47,7 @@ class consultas
     }
     public function getConsultaY()
     {
-        $query = "SELECT * FROM consultas_com_nomesY;";
+        $query = "SELECT * FROM consultas_com_nomesY ORDER BY id_consulta;";
         return $this->executeQuery($query);
     }
 

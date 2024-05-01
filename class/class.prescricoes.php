@@ -23,6 +23,16 @@ class prescrisoes
         ];
         return $this->executeQuery($query, $params);
     }
+
+    public function ProcedimentoAtualizaFatura($id_consulta, $id_prescricao)
+    {
+        $query = "CALL atualizar_fatura(:id_consulta, :id_prescricao);";
+        $params = [
+            ':id_consulta' => $id_consulta,
+            ':id_prescricao' => $id_prescricao
+        ];
+        return $this->executeQuery($query, $params);
+    }
     public function insertPrescricao($id_consulta, $data_fim)
     {
         $query = "INSERT INTO prescricoes (id_consulta, data_inicio, data_fim, valor_prescricao) VALUES (:id_consulta, now(), :data_fim, 0)";

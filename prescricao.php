@@ -56,6 +56,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $prescricao->insertPrescricaoAux($id_prescricao, $medicamento_input5, $quantidade5);
     }
 
+    $aux_new = $prescricao->getPrescricao($id_consulta);
+    $new_id_prescricao = $aux_new->fetch(PDO::FETCH_ASSOC);
+    $id_prescricao_new = $new_id_prescricao['id_prescricao'];
+
+    $prescricao->ProcedimentoAtualizaFatura($id_consulta, $id_prescricao_new);
+
     header('Location: medico.php');
 }
 

@@ -9,6 +9,24 @@ body {
     height: 100vh;
 }
 
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header a {
+    background-color: rgb(50, 137, 213);
+    border-radius: 15px;
+    padding: 10px 25px;
+    color: #fff;
+    text-decoration: none;
+    margin: 10px 25px;
+}
+
 .cartao {
     display: flex;
     flex-direction: row;

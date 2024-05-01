@@ -46,6 +46,7 @@ $consultY = $consulY->fetchAll(PDO::FETCH_ASSOC);
             <table border="3px">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Paciente</th>
                         <th>Médico</th>
                         <th>Data</th>
@@ -56,6 +57,7 @@ $consultY = $consulY->fetchAll(PDO::FETCH_ASSOC);
                 <tbody>
                     <?php foreach ($consultas as $consulta) : ?>
                         <tr>
+                            <td><?= $consulta['id_consulta'] ?></td>
                             <td><?= $consulta['nome_paciente'] ?></td>
                             <td><?= $consulta['nome_profissional'] ?></td>
                             <td><?= date('d/m/Y H:i', strtotime($consulta['data_consulta'])) ?></td>
@@ -70,10 +72,11 @@ $consultY = $consulY->fetchAll(PDO::FETCH_ASSOC);
         </div>
 
         <div class="tabela2">
-            <h3>CONSULTAS FEITAS</h3>
+            <h3>CONSULTAS PRESCRITAS</h3>
             <table border="3px">
                 <thead>
                     <tr>
+                        <th>ID</th>
                         <th>Paciente</th>
                         <th>Médico</th>
                         <th>Data</th>
@@ -84,6 +87,7 @@ $consultY = $consulY->fetchAll(PDO::FETCH_ASSOC);
                 <tbody>
                     <?php foreach ($consultY as $consu) : ?>
                         <tr>
+                            <td><?= $consu['id_consulta'] ?></td>
                             <td><?= $consu['nome_paciente'] ?></td>
                             <td><?= $consu['nome_profissional'] ?></td>
                             <td><?= date('d/m/Y H:i', strtotime($consu['data_consulta'])) ?></td>

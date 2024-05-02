@@ -4,17 +4,21 @@ include 'class/class.tratamentos.php';
 include 'class/class.consulta.php';
 include 'class/class.medicamentos.php';
 include 'class/class.prescricoes.php';
+include 'class/class.fatura.php';
 
 $medica = new Medicamentos();
 $medicamento = $medica->getMedicamento();
 $medicamentos = $medicamento->fetchAll(PDO::FETCH_ASSOC);
 
+$fat = new fatura();
 $consulta = new consultas();
 $tratamento = new tratamentos();
 $prescricao = new prescrisoes();
 
 $id_consulta = $_GET['id'];
 
+$query_fat = $fat->getFatura($id_consulta);
+$result_fat = $query_fat->fetch(PDO::FETCH_ASSOC);
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $descricao = $_POST['descricao'];
     $data_fim = $_POST['data_fim'];
@@ -60,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $new_id_prescricao = $aux_new->fetch(PDO::FETCH_ASSOC);
     $id_prescricao_new = $new_id_prescricao['id_prescricao'];
 
-    $prescricao->ProcedimentoAtualizaFatura($id_consulta, $id_prescricao_new);
+    $prescricao->ProcedimentoAtualizaFatura($result_fat['idFatura'], $id_prescricao_new);
 
     header('Location: medico.php');
 }

@@ -114,17 +114,18 @@ $fatura_result = $fatura_query->fetch(PDO::FETCH_ASSOC);
             <span>Valor do tratamento: </span>
             <?= $tratamentos['valor_tratamento'] ?><br><br>
             <p><a style="border: 3px solid; padding: 3px;" href="deletar_tratamento.php?id=<?= $tratamentos['id_tratamento'] ?>">Deletar tratamento</a></p>
-            <P><a style="border: 3px solid; padding: 3px;" href="finalizar_tratamento.php?id=<?= $tratamentos['id_tratamento'] ?>">Finalizar tratamento</a></P>
-            
-            <br>
-            <p>
-            <span>Valor Fatura : <?=$fatura_result['Valor']?></span>
-            <br><br>
-            <a style="border: 3px solid; padding: 3px;" href="pagar_fatura.php?id=<?=$fatura_result['idFatura']?> ">PAGAR FATURA</a></p>
-        </div>
-        
+            <P><a style="border: 3px solid; padding: 3px;" href="finalizar_tratamento.php?id=<?= $tratamentos['id_tratamento'] ?>">Finalizar tratamento</a></P><br>
 
+            <h3>Informações da Fatura</h3>
+            <?php if ($fatura_result['statusPagamento'] == "pagou") : ?>
+                <span>Fatura Paga</span><br><br>
+            <?php else : ?>
+                <span>Valor Fatura : <?= $fatura_result['Valor'] ?></span><br><br>
+                <a style="border: 3px solid; padding: 3px;" href="pagar_fatura.php?id=<?= $fatura_result['idFatura'] ?> ">PAGAR FATURA</a>
+            <?php endif; ?>
+        </div>
     </div>
+
 </body>
 
 </html>
